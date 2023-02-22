@@ -135,8 +135,31 @@ li:hover {
 
 .gallery img {
 	width: 100%;
-
 }
+/* Button Filtre Homepage */
+.div-btn {
+	display: flex;
+	justify-content: center;
+	width: 50%;
+	margin: 1em auto;
+}
+.btn-all {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: #1D6154;
+	background-color: white;
+	margin : 2em auto ;
+	width: 130px;
+	height: 37px;
+	text-align: center;
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+}
+.btn-all:active {
+	background-color: #1D6154;
+	color: white;
+}
+
 #contact {
 	width: 50%;
 margin: auto;
