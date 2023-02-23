@@ -23,10 +23,12 @@ dataApi.then (response => {
         // console.log(figure);
 
         let img = document.createElement("img");
-        // img.src = work.imageUrl;
+        img.src = work.imageUrl;
         img.setAttribute("alt", work.title);
+        
+        // img.crossOrigin = "anonymous";
         figure.appendChild(img);
-        // console.log(img);
+        console.log(img);
 
         let figcaption = document.createElement("figcaption");
         figcaption.innerHTML = work.title;
@@ -51,7 +53,7 @@ categoriesApi.then (response => {
 
             let button = document.createElement("button");
             button.innerHTML = category.name;
-            button.classList.add("btn-all");
+            button.classList.add("btn");
             divFilter.appendChild(button);
         }
 });
@@ -60,8 +62,9 @@ const divFilter = document.createElement("div");
 divFilter.innerHTML = " ";
 divFilter.classList.add("div-btn");
 titlePortfolio.append(divFilter);
-
+// Ajout du bouton "Tous"
 const btnAll = document.createElement("button");
 btnAll.innerHTML = "Tous";
-btnAll.classList.add("btn-all");
+btnAll.classList.add("btn");
 divFilter.appendChild(btnAll);
+
