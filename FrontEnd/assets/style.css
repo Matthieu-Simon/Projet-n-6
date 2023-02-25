@@ -163,7 +163,7 @@ li:hover {
 	border: 1px solid #1D6154;
 	cursor: pointer;
 }
-.btn-all:active {
+.btn:hover {
 	background-color: #1D6154;
 	color: white;
 }
@@ -176,7 +176,7 @@ li:hover {
 	text-align: center;
 
 }
-#contact h2{
+#contact h2 {
 	margin-bottom: 20px;
 }
 #contact form {
@@ -259,7 +259,7 @@ main {
 .login_form a {
 	color: grey;
 }
-.login_form p {
+.login_form a {
 	text-align: center;
 }
 .footer {
