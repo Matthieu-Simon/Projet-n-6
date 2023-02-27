@@ -1,13 +1,11 @@
+// Import des modules
+import { urlToPath } from "./utils.js";
 
-
+// On sélectionne les éléments du DOM
 const gallery = document.querySelector(".gallery");
 const titlePortfolio = document.querySelector(".title-portfolio");
 
-function urlToPath(url) {
-    const splitUrl = url.split("/");
-    return splitUrl[splitUrl.length - 1].replace(/[0-9]/g,"");
-}
-
+// On récupère les données de l'API
 const dataApi = fetch('http://localhost:5678/api/works');
 
 dataApi.then (response => {
@@ -50,13 +48,13 @@ categoriesApi.then (response => {
     .then (categories => {
         for (let i = 0; i < categories.length; i++) {
             let category = categories[i];
-
+            // Création des boutons de filtre par catégorie
             let btnFilter = document.createElement("button");
             btnFilter.innerHTML = category.name;
             btnFilter.setAttribute("id", category.id);
             btnFilter.classList.add("btn");
             divFilterWorks.appendChild(btnFilter);
-
+            // Ajout de l'évènement au clic sur les boutons de filtre par catégorie 
             btnFilter.addEventListener('click', () => {
                 myfunction(category.id);
             })
@@ -67,33 +65,14 @@ const divFilterWorks = document.createElement("div");
 divFilterWorks.innerHTML = "";
 divFilterWorks.classList.add("div-btnFilter");
 titlePortfolio.append(divFilterWorks);
-
+// Ajout du bouton "Tous"
 const btnAllWorks = document.createElement("button");
 btnAllWorks.innerHTML = "Tous";
 btnAllWorks.setAttribute("id", "all");
 btnAllWorks.classList.add("btn");
 divFilterWorks.appendChild(btnAllWorks);
 
-// Ajout de la fonctionnalité de filtre
-function showGalleryFiltered (filteredWorks) {
-    gallery.innerHTML = "";
-    for (let key in filteredWorks) {
-        let work = filteredWorks[key];
-        let figure = document.createElement("figure");
-        gallery.appendChild(figure);
-
-        let imgWorks = document.createElement("img");
-        imgWorks.src = work.imageUrl;
-        imgWorks.setAttribute("alt", work.title);
-        figure.appendChild(imgWorks);
-
-        let figcaption = document.createElement("figcaption");
-        figcaption.innerHTML = work.title;
-        figure.appendChild(figcaption);
-    }
-}
-
-
+// Ajout de l'évènement au clic sur le bouton "Tous"
 btnAllWorks.addEventListener("click", function() {
     
     console.log("Tous les travaux");
