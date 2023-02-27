@@ -144,7 +144,7 @@ li:hover {
 	width: 100%;
 }
 /* Button Filtre Homepage */
-.div-btn {
+.div-btnFilter {
 	display: flex;
 	justify-content: center;
 	width: 50%;
