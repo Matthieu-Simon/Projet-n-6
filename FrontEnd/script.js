@@ -7,9 +7,12 @@ const data = await dataApi.json();
 // Ajout de l'évènement au clic sur les boutons de filtre par catégorie 
 const btnObjets = document.querySelector(".objets");
     btnObjets.addEventListener('click', () => {
+    // On filtre les données pour ne garder que les objets
     const objets = data.filter(work => work.category.name === 'Objets');
     const gallery = document.querySelector(".gallery");
+    // On vide la galerie avant d'afficher les projets
     gallery.innerHTML = "";
+    // On appelle la fonction pour afficher les projets
     generateWorks(objets);
 });
 const btnAppartements = document.querySelector(".appartements");
