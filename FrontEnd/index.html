@@ -14,10 +14,26 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+	<!-- Ajout banner pour ajouter du contenu -->
 	<div class="banner">
 		<i class="fa-regular  fa-lg fa-pen-to-square"></i>
-		<p>Mode édition</p>
+		<p class="">Mode édition</p>
 		<button class="update">publier les changements</button>
+	</div>
+	<!-- Ajout de la modale -->
+	<div class="modale">
+		<div class="modale-container">
+			<div class="icon-container">
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+			<h2 class="title-modale">Galerie photo</h2>
+			<div class="work-container">
+		
+			</div>
+			<div class="edit-ligne"></div>
+			<button class="btnAdd-photo">Ajouter une photo</button>
+			<p class="edit-delete">Supprimer la galerie</p>
+		</div>
 	</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
@@ -34,6 +50,8 @@
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<i class="fa-regular  fa-lg fa-pen-to-square"></i>
+			<p class="text-intro">Modifier</p>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -43,7 +61,11 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2 class="title-portfolio">Mes Projets</h2>
+		<div class="header-portfolio">
+			<h2 class="title-portfolio">Mes Projets</h2>
+				<i class="fa-regular  fa-lg fa-pen-to-square"></i>
+				<span class="text-portfolio open-modale">Modifier</span>
+		</div>
 		<div class="div-btnFilter">
 			<button class="btn all">Tous</button>
 			<button class="btn objets">Objets</button>
@@ -76,6 +98,7 @@
 	</nav>
 	<script type="module" src="./script.js"></script>
 	<script type="module" src="./utils.js"></script>
+	<script type="module" src="./modale.js"></script>
 </footer>
 </body>
 </html>
