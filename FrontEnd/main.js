@@ -4,7 +4,7 @@ import { urlToPath } from './utils.js';
 // on fetch les données de l'API
 const dataApi = await fetch('http://localhost:5678/api/works');
 const data = await dataApi.json();
-console.log(data);
+
 // Fonction qui va générer les éléments html pour chaque projet de la galerie
 const generateWorks = (data) => {
     const gallery = document.querySelector('.gallery');
@@ -51,6 +51,7 @@ categories.appendChild(btnHotels);
 // on ajoute un évènement au clic sur chaque bouton
 btnObject.addEventListener('click', () => {
     const dataObject = data.filter(work => work.category.id === 1);
+    
     generateWorks(dataObject);
 });
 
