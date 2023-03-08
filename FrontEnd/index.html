@@ -15,13 +15,13 @@
 </head>
 <body>
 	<!-- Ajout banner pour ajouter du contenu -->
-	<div class="banner">
+	<div class="banner admin">
 		<i class="fa-regular  fa-lg fa-pen-to-square"></i>
-		<p class="">Mode édition</p>
+		<p class="text-banner">Mode édition</p>
 		<button class="update">publier les changements</button>
 	</div>
 	<!-- Ajout de la modale -->
-	<div class="modale">
+	<div class="modale admin">
 		<div class="modale-container">
 			<div class="icon-container">
 				<i class="fa-solid fa-xmark"></i>
@@ -36,7 +36,7 @@
 		</div>
 	</div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
@@ -49,11 +49,13 @@
 <main>
 	<section id="introduction">
 		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
-			<i class="fa-regular  fa-lg fa-pen-to-square"></i>
-			<p class="text-intro">Modifier</p>
+			<img src="./assets/images/sophie-bluel.png" alt="Photo de Sophie Bluel">
+			<i class="fa-regular  fa-lg fa-pen-to-square icon-photo admin"></i>
+			<p class="text-photo admin">Modifier</p>
 		</figure>
 		<article>
+			<i class="fa-regular  fa-lg fa-pen-to-square icon-intro admin"></i>
+			<p class="text-intro admin">Modifier</p>
 			<h2>Designer d'espace</h2>
 			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -63,17 +65,11 @@
 	<section id="portfolio">
 		<div class="header-portfolio">
 			<h2 class="title-portfolio">Mes Projets</h2>
-				<i class="fa-regular  fa-lg fa-pen-to-square"></i>
-				<span class="text-portfolio open-modale">Modifier</span>
+			<i class="fa-regular  fa-lg fa-pen-to-square admin"></i>
+			<span class="text-portfolio open-modale admin">Modifier</span>
 		</div>
-		<div class="div-btnFilter">
-			<button class="btn all">Tous</button>
-			<button class="btn objets">Objets</button>
-			<button class="btn appartements">Appartements</button>
-			<button class="btn hotels">Hôtels & restaurants</button>
-		</div>
-		<div class="gallery">			
-		</div>
+		<div class="categories"></div>
+		<div class="gallery"></div>
 	</section>
 	<section id="contact">
 		<h2>Contact</h2>
@@ -96,9 +92,8 @@
 			<li>Mentions Légales</li>
 		</ul>
 	</nav>
-	<script type="module" src="./script.js"></script>
-	<script type="module" src="./utils.js"></script>
-	<script type="module" src="./modale.js"></script>
+	<script type="module" src="./main.js"></script>
+	<script type="module" src="./admin.js"></script>
 </footer>
 </body>
 </html>

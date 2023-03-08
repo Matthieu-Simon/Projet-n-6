@@ -82,6 +82,9 @@ body {
 	padding: 5px 15px;
 }
 /*** Partie Modale ***/
+.text-banner, .text-intro, .text-portfolio {
+	cursor: pointer;
+}
 .modale {
 	position: fixed;
 	top: 0;
@@ -121,6 +124,23 @@ body {
 	font-size: 26px;
 	color: #000000;
 	margin-top: 20px;
+}
+.edit-ligne {
+	border: 1px solid #B3B3B3;
+	width: 420px;
+	position: absolute;
+	top: 450px;
+}
+.btnAdd-photo {
+	background: #1D6154;
+	border-radius: 20px;
+	border: none;
+	color: #fff;
+	padding: 10px 50px;
+	margin: 20px 0 0;
+}
+.edit-delete {
+	color: red;
 }
 /*** Général  ***/
 header {
@@ -187,12 +207,20 @@ li:hover {
 	margin: auto;
 	width: 80%;
 }
-#introduction i {
+#introduction .icon-photo {
 	position: relative;
 	left: 60px;
 	top: 12px;
 }
+#introduction .icon-intro {
+	position: relative;
+	top: 12px;
+}
 #introduction .text-intro {
+	position: relative;
+	left: 30px;
+}
+#introduction .text-photo {
 	position: relative;
 	left: 85px;
 }
@@ -231,7 +259,7 @@ li:hover {
 	width: 100%;
 }
 /* Button Filtre Homepage */
-.div-btnFilter {
+.categories {
 	display: flex;
 	justify-content: center;
 	width: 50%;
@@ -250,7 +278,7 @@ li:hover {
 	border: 1px solid #1D6154;
 	cursor: pointer;
 }
-.btn:hover {
+.btn .All {
 	background-color: #1D6154;
 	color: white;
 }
