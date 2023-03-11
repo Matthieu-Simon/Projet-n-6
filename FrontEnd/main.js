@@ -76,6 +76,14 @@ logout.classList.add('logout');
 logout.innerHTML = '<a href="login.html">Logout</a>';
 login.after(logout);
 
+const banner = document.querySelector('.banner');
+const textPhoto = document.querySelector('.text-photo');
+const textIntro = document.querySelector('.text-intro');
+const textPortfolio = document.querySelector('.text-portfolio');
+
+const iconIntro = document.querySelector('.icon-intro');
+const iconPhoto = document.querySelector('.icon-photo');
+const iconGallery = document.querySelector('.icon-gallery');
 
 const checkAdmin = () => {
     // on récupère le bouton de connexion
@@ -88,11 +96,28 @@ const checkAdmin = () => {
         logout.style.display = 'block';
         // on cache le bouton de connexion
         login.style.display = 'none';
+
+        banner.style.display = 'block';
+        textPhoto.style.display = 'block';
+        textIntro.style.display = 'block';
+        textPortfolio.style.display = 'block';
+        iconIntro.style.display = 'block';
+        iconPhoto.style.display = 'block';
+        iconGallery.style.display = 'block';
+
     } else {
         // si le token n'est pas présent, on affiche le bouton de connexion
         login.style.display = 'block';
         // on cache le bouton de déconnexion
         logout.style.display = 'none';
+
+        banner.style.display = 'none';
+        textPhoto.style.display = 'none';
+        textIntro.style.display = 'none';
+        textPortfolio.style.display = 'none';
+        iconIntro.style.display = 'none';
+        iconPhoto.style.display = 'none';
+        iconGallery.style.display = 'none';
     }
 }
 // on appelle la fonction pour vérifier si l'admin est connecté
@@ -105,3 +130,5 @@ logout.addEventListener('click', () => {
     // on redirige l'utilisateur vers la page de connexion
     document.location.href = './login.html';
 });
+
+// on crée une fonction qui va vérifier si l'admin est connecté et s'il est connecté, afficher les éléments html pour le mode admin
