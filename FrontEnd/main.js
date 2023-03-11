@@ -68,3 +68,40 @@ btnHotels.addEventListener('click', () => {
 btnAll.addEventListener('click', () => {
     generateWorks(data);
 });
+
+// on crée une fonction qui va vérifier si l'admin est connecté et s'il est connecté, afficher le bouton de déconnexion
+const login = document.querySelector('.login');
+const logout = document.createElement("li");
+logout.classList.add('logout');
+logout.innerHTML = '<a href="login.html">Logout</a>';
+login.after(logout);
+
+
+const checkAdmin = () => {
+    // on récupère le bouton de connexion
+    const login = document.querySelector('.login');
+    // on récupère le bouton de déconnexion
+    const logout = document.querySelector('.logout');
+    // on vérifie si le token est présent dans le localStorage
+    if (localStorage.getItem('token') !== null) {
+        // si le token est présent, on affiche le bouton de déconnexion
+        logout.style.display = 'block';
+        // on cache le bouton de connexion
+        login.style.display = 'none';
+    } else {
+        // si le token n'est pas présent, on affiche le bouton de connexion
+        login.style.display = 'block';
+        // on cache le bouton de déconnexion
+        logout.style.display = 'none';
+    }
+}
+// on appelle la fonction pour vérifier si l'admin est connecté
+checkAdmin();
+
+// on ajoute un évènement au clic sur le bouton de déconnexion
+logout.addEventListener('click', () => {
+    // on supprime le token du localStorage
+    localStorage.removeItem('token');
+    // on redirige l'utilisateur vers la page de connexion
+    document.location.href = './login.html';
+});

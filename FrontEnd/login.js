@@ -39,32 +39,3 @@ loginBtn.addEventListener('click', (event) => {
         console.error(error);
     });
 });
-
-// ajouter des éléments au DOM une fois connecté
-const login = document.querySelector('.admin');
-
-const logout = document.createElement('li');
-logout.classList.add('logout');
-logout.innerHTML = 'Logout';
-login.appendChild(logout);
-console.log(logout);
-// on vérifie si le token est présent dans le localStorage
-if (localStorage.getItem('token') !== null) {
-    // si le token est présent, on affiche le bouton de déconnexion
-    logout.style.display = 'block';
-    // on cache le bouton de connexion
-    login.style.display = 'none';
-} else {
-    // si le token n'est pas présent, on affiche le bouton de connexion
-    login.style.display = 'block';
-    // on cache le bouton de déconnexion
-    logout.style.display = 'none';
-}
-
-// on ajoute un évènement au clic sur le bouton de déconnexion
-logout.addEventListener('click', () => {
-    // on supprime le token du localStorage
-    localStorage.removeItem('token');
-    // on redirige l'utilisateur vers la page de connexion
-    document.location.href = './login.html';
-});
